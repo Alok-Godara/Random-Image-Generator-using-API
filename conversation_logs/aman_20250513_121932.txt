@@ -1,0 +1,26 @@
+Conversation Log for aman
+Started at: 2025-05-13 12:19:32
+==================================================
+
+[12:19:35] AI: Hello aman! This is a call from IIT Jodhpur regarding our upcoming cultural fest, Ignus. Do you have a moment to talk about it?
+[12:19:54] User: The chukwinpul.
+[12:19:55] AI: I'm sorry, I don't understand.  Could you please say that again?
+
+[12:20:11] User: Yahase jalija.
+[12:20:11] AI: I'm sorry, I didn't understand. Could you please repeat that?
+
+[12:20:27] User: Go away. Go away, you bitch. Go away.
+[12:20:28] AI: Thanks for your time! Hope to see you at the fest. Feel free to reach out with any questions!
+
+
+==================================================
+CONVERSATION SUMMARY
+==================================================
+
+Date: 2025-05-13
+Start Time: 12:19:32
+End Time: 12:20:31
+Total Messages: 7
+Interest Level: NO
+Reason: The user ended the conversation abruptly using offensive language, indicating a lack of interest and unwillingness to engage further with information about Ignus.  No further interest was expressed.
+
