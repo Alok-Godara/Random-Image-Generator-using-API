@@ -52,20 +52,6 @@ const CardHolder = () => {
       profession: "Film Editor",
       profilePhoto: "https://randomuser.me/api/portraits/men/10.jpg",
     },
-    {
-      fullName: "Jack Wilson",
-      age: 32,
-      city: "Los Angeles",
-      profession: "Film Editor",
-      profilePhoto: "https://randomuser.me/api/portraits/men/10.jpg",
-    },
-    {
-      fullName: "Jack Wilson",
-      age: 32,
-      city: "Los Angeles",
-      profession: "Film Editor",
-      profilePhoto: "https://randomuser.me/api/portraits/men/10.jpg",
-    },
   ];
 
   const scrollRef = useRef(null);
