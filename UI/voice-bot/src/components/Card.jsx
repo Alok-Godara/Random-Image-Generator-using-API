@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = (props) => {
   return (
-    <div className="bg-white w-50 h-[270px] p-4 text-center rounded-2xl shadow">
+    <div className="bg-white w-50 h-[270px] p-4 text-center rounded-2xl shadow flex-shrink-0">
       <img
         className="h-24 w-24 rounded-full mx-auto mb-2"
         src={props.profilePhoto}

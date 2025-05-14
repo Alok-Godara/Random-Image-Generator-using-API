@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Card from "./Card";
 
 const CardHolder = () => {
@@ -52,22 +52,59 @@ const CardHolder = () => {
       profession: "Film Editor",
       profilePhoto: "https://randomuser.me/api/portraits/men/10.jpg",
     },
+    {
+      fullName: "Jack Wilson",
+      age: 32,
+      city: "Los Angeles",
+      profession: "Film Editor",
+      profilePhoto: "https://randomuser.me/api/portraits/men/10.jpg",
+    },
+    {
+      fullName: "Jack Wilson",
+      age: 32,
+      city: "Los Angeles",
+      profession: "Film Editor",
+      profilePhoto: "https://randomuser.me/api/portraits/men/10.jpg",
+    },
   ];
 
+  const scrollRef = useRef(null);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const scrollSpeed = 200;  // Adjust scroll speed (px per scroll)
+  const scrollInterval = 1000;  // Time interval (ms) for each scroll
+
+  useEffect(() => {
+    let interval;
+    if (isScrolling) {
+      interval = setInterval(() => {
+        if (scrollRef.current) {
+          scrollRef.current.scrollLeft += scrollSpeed;
+        }
+      }, scrollInterval);
+    } else {
+      clearInterval(interval);
+    }
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, [isScrolling]);
+
   return (
-    <div className="flex flex-wrap gap-x-6 justify-between mx-5">
-      {users.map(function (elem) {
-        return (
-          <Card
-            key={elem.fullName}
-            name={elem.fullName}
-            age={elem.age}
-            city={elem.city}
-            profession={elem.profession}
-            profilePhoto={elem.profilePhoto}
-          />
-        );
-      })}
+    <div
+      ref={scrollRef}
+      onMouseEnter={() => setIsScrolling(true)}  // Start scrolling when mouse enters
+      onMouseLeave={() => setIsScrolling(false)} // Stop scrolling when mouse leaves
+      className="flex overflow-x-auto no-scrollbar flex-nowrap gap-x-6 px-5 scroll-smooth"
+    >
+      {users.map((elem) => (
+        <Card
+          key={elem.fullName}
+          name={elem.fullName}
+          age={elem.age}
+          city={elem.city}
+          profession={elem.profession}
+          profilePhoto={elem.profilePhoto}
+        />
+      ))}
     </div>
   );
 };
