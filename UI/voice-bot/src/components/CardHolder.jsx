@@ -70,8 +70,8 @@ const CardHolder = () => {
 
   const scrollRef = useRef(null);
   const [isScrolling, setIsScrolling] = useState(false);
-  const scrollSpeed = 200;  // Adjust scroll speed (px per scroll)
-  const scrollInterval = 1000;  // Time interval (ms) for each scroll
+  const scrollSpeed = 300;  // Adjust scroll speed (px per scroll)
+  const scrollInterval = 300;  // Time interval (ms) for each scroll
 
   useEffect(() => {
     let interval;
@@ -88,11 +88,19 @@ const CardHolder = () => {
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, [isScrolling]);
 
+  // Reset scroll position when the mouse leaves
+  const handleMouseLeave = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft = 0; // Reset scroll position
+    }
+    setIsScrolling(false); // Stop scrolling
+  };
+
   return (
     <div
       ref={scrollRef}
       onMouseEnter={() => setIsScrolling(true)}  // Start scrolling when mouse enters
-      onMouseLeave={() => setIsScrolling(false)} // Stop scrolling when mouse leaves
+      onMouseLeave={handleMouseLeave} // Stop scrolling and reset position when mouse leaves
       className="flex overflow-x-auto no-scrollbar flex-nowrap gap-x-6 px-5 scroll-smooth"
     >
       {users.map((elem) => (
