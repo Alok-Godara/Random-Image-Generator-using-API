@@ -1,37 +1,22 @@
-import React, { useState } from 'react'
+import React from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import CardHolder from "./components/CardHolder";
+import Picsum from "./components/Picsum";
+// import Main from "./components/Main";
 
 const App = () => {
-  
-  const [username , setUsername] = useState('')
- 
-  const submitHandler = (e)=>{
-    e.preventDefault()
-    console.log(username + " submitted")
-    setUsername('')
-  }
- 
   return (
-    <div className='flex items-center justify-center min-h-screen'>
-      <form onSubmit={(e)=>{
-        submitHandler(e)
-      }} className='bg-gray-100 p-8 rounded-lg shadow-lg'>
-        <input 
-          className='border p-4 text-lg mr-4' 
-          type="text" 
-          placeholder='Enter your name' 
-          onChange={(e)=> {
-            setUsername(e.target.value)
-          }}
-          value={username}
-          />
-        <button 
-          className='bg-blue-500 text-white px-6 py-3 text-xl rounded-lg 
-          hover:bg-blue-600 active:bg-blue-700 transition-all'>
-          SUBMIT
-        </button>
-      </form>
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-grow">
+        <Picsum />
+        <CardHolder />
+        {/* <Main /> */}
+      </main>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
