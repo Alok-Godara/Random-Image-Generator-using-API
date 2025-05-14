@@ -11,7 +11,10 @@ const Picsum = () => {
     setData(randomImages);
   };
 
-  useEffect
+  useEffect(() => {
+    getData()
+  }, [])
+  
 
   return (
     <div className="h-72 m-5 bg-white flex flex-col justify-between items-center p-4 rounded overflow-hidden">
