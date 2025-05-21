@@ -6,7 +6,7 @@ const Picsum = () => {
   const getData = () => {
     const randomImages = Array.from({ length: 7 }, (_, i) => ({
       id: i,
-      url: `https://picsum.photos/300/200?random=${Math.random()}`
+      url: `https://picsum.photos/200/300?random=${Math.random()}`
     }));
     setData(randomImages);
   };
